@@ -55,8 +55,7 @@ public class Users implements UserDetails {
 
     private String address;
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "order_id", referencedColumnName = "id")
+    @OneToMany(mappedBy = "userInfo", fetch = FetchType.EAGER)
     private List<Orders> orders = new ArrayList<>();
 
     @LastModifiedDate
